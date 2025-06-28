@@ -1,4 +1,4 @@
-param location string = 'eastus'
+param location string = 'southcentralus'
 param appServicePlanSku string = 'B1'
 param pythonVersion string = '3.11'
 
