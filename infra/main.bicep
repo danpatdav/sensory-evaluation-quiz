@@ -17,7 +17,7 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'PYTHON|${pythonVersion}'
+      linuxFxVersion: 'PYTHON|3.11'
       alwaysOn: true
     }
     httpsOnly: true
