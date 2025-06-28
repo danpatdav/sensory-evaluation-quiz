@@ -1,5 +1,5 @@
 param location string = 'southcentralus'
-param appServicePlanSku string = 'F1'
+param appServicePlanSku string = 'B1'
 param pythonVersion string = '3.11'
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
