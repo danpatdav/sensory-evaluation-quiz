@@ -14,7 +14,7 @@ jobs:
       - name: Install Azure CLI 2.72.0
         run: |
           az version
-          sudo apt-get install azure-cli=2.72.0* -y
+          sudo apt-get install azure-cli=2.72.0* -y --allow-downgrades
           az version
       
       - name: Azure Login
