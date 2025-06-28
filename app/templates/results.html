@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Fragrance Results</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Your Results</h1>
+    <h2>Total Score: {{ score }}/36</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Your Guess</th>
+                <th>Correct Answer</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for res in results %}
+            <tr>
+                <td>{{ res.number }}</td>
+                <td>{{ res.your_guess }}</td>
+                <td>{{ res.correct_answer }}</td>
+                <td>{{ '✅' if res.correct else '❌' }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href=\"/\">Try Again</a>
+</div>
+</body>
+</html>
