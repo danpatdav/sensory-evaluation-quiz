@@ -29,7 +29,6 @@ jobs:
           resourceGroupName: sensory-rg
           template: ./infra/main.bicep
           parameters: location=centralus
-          python-version: '3.11'
       
       - name: Setup Python
         uses: actions/setup-python@v5
