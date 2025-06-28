@@ -12,7 +12,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
 
 resource webApp 'Microsoft.Web/sites@2024-04-01' = {
   name: 'sensory-evaluation-quiz-${uniqueString(resourceGroup().id)}'
-  kind: 'app, linux'
+  kind: 'app,linux'
   location: location
   properties: {
     serverFarmId: appServicePlan.id
