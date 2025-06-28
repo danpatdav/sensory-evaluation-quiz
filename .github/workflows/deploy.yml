@@ -20,7 +20,7 @@ jobs:
         uses: azure/arm-deploy@v2
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: fragrance-app-rg
+          resourceGroupName: sensory
           template: ./infra/main.bicep
           parameters: location=eastus
       
