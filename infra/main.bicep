@@ -1,8 +1,7 @@
 param location string = 'southcentralus'
 param appServicePlanSku string = 'B1'
-param pythonVersion string = '3.11'
 
-resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2024-11-01' = {
   name: 'sensoryAppPlan'
   location: location
   sku: {
@@ -17,7 +16,7 @@ resource webApp 'Microsoft.Web/sites@2022-03-01' = {
   properties: {
     serverFarmId: appServicePlan.id
     siteConfig: {
-      linuxFxVersion: 'PYTHON|3.11'
+      linuxFxVersion: 'PYTHON:3.11'
       alwaysOn: true
     }
     httpsOnly: true
