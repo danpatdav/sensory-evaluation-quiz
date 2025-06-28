@@ -1,4 +1,4 @@
-name: Deploy Fragrance Guess App
+name: Deploy Sensory Evaluation Quiz
 
 on:
   push:
@@ -38,5 +38,5 @@ jobs:
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
-          app-name: fragrance-guess-app
+          app-name: sensory-evaluation-quiz
           package: deploy.zip
