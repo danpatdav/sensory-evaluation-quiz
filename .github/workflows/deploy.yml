@@ -26,9 +26,9 @@ jobs:
         uses: azure/arm-deploy@v2
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: sensory
+          resourceGroupName: sensory-rg
           template: ./infra/main.bicep
-          parameters: location=eastus
+          parameters: location=southcentralus
       
       - name: Setup Python
         uses: actions/setup-python@v5
