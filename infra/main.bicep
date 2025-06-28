@@ -3,7 +3,7 @@ param appServicePlanSku string = 'B1'
 param pythonVersion string = '3.11'
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
-  name: 'fragranceAppPlan'
+  name: 'sensoryAppPlan'
   location: location
   sku: {
     name: appServicePlanSku
@@ -12,7 +12,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
 }
 
 resource webApp 'Microsoft.Web/sites@2022-03-01' = {
-  name: 'fragrance-guess-app-${uniqueString(resourceGroup().id)}'
+  name: 'sensory-evaluation-quiz-${uniqueString(resourceGroup().id)}'
   location: location
   properties: {
     serverFarmId: appServicePlan.id
