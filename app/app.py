@@ -25,6 +25,8 @@ init_db()
 with open('aromas.json') as f:
     aromas = json.load(f)
 
+NUM_AROMAS = len(aromas)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     results = []
@@ -34,7 +36,7 @@ def index():
         cursor = conn.cursor()
 
         score = 0
-        for number in range(1, 36):
+        for number in range(1, NUM_AROMAS + 1):
             guess = request.form.get(f'aroma_{number}', '').strip().lower()
             correct_answer = aromas.get(str(number), '').lower()
             correct = guess == correct_answer
@@ -57,9 +59,9 @@ def index():
 
         conn.close()
 
-        return render_template('results.html', results=results, score=score, leaderboard=leaderboard)
+        return render_template('results.html', results=results, score=score, leaderboard=leaderboard, num_aromas=NUM_AROMAS)
 
-    return render_template('index.html')
+    return render_template('index.html', num_aromas=NUM_AROMAS)
 
 if __name__ == '__main__':
     app.run(debug=True)
